@@ -15,7 +15,7 @@
           </el-dropdown-item>
 
           <el-dropdown-item>
-            <router-link to='vip'>会员视频解析</router-link>
+            <router-link to='vip'>视频解析</router-link>
           </el-dropdown-item>
 
           <el-dropdown-item>
@@ -31,7 +31,7 @@
           </el-dropdown-item>
 
           <el-dropdown-item>
-            <router-link to='others'>各种资源</router-link>
+            <router-link to='others'>更多资源</router-link>
           </el-dropdown-item>
 
         </el-dropdown-menu>
@@ -46,7 +46,7 @@
 
           <router-link to='movie'><el-button type="primary" round>电影频道</el-button></router-link>
 
-          <router-link to='vip'><el-button type="primary" round>会员视频解析</el-button></router-link>
+          <router-link to='vip'><el-button type="primary" round>视频解析</el-button></router-link>
 
           <a href='http://rrd.me/ftesh'><el-button type="primary" round>优惠购物</el-button></a>
 
@@ -54,7 +54,7 @@
 
           <router-link to='tiku'><el-button type="primary" round>题库中心</el-button></router-link>
 
-          <router-link to='others'><el-button type="primary" round>各种资源</el-button></router-link>
+          <router-link to='others'><el-button type="primary" round>更多资源</el-button></router-link>
         </div>
 
         <p class="tuijian">强烈推荐关注公众号<br/>获取更多资源</p>
@@ -92,6 +92,9 @@
       margin:0px;
   }
 
+  #hello{
+    position:absolute;
+  }
   #hello a .el-button{
     float:left;
     clear:both;
@@ -99,20 +102,16 @@
     margin-top:40px;
     margin-left:-20px;
   }
-  #hello a .el-button+.el-button{
-    float:left;
-    clear:both;
-    margin-top:40px;
-  }
+
   .tuijian{
-    position:absolute;
+    position:fixed;
     right:0px;
     bottom:120px;
     color:red;
   }
 
   .joinus{
-    position:absolute;
+    position:fixed;
     right:20px;
     bottom:20px;
     width:100px;
@@ -141,7 +140,9 @@
       display:none;
     }
     #hello{
-      margin-bottom:8vh
+      position:relative;
+      height:0px;
+      margin-bottom:8vh;
     }
     .phoneNav{
       display:block;

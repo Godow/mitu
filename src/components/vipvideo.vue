@@ -1,8 +1,8 @@
 <template>
     <div id="vipvideo">
         <hello></hello>
-        <h2 style="color:#FF7256;text-align:center">全网VIP视频解析</h2>
-        <iframe :src="myUrl" style="height:60vh;border:1px dashed gray;" allowfullscreen='true' ></iframe>
+        <h2 style="color:#FF7256;text-align:center;padding:1vh">全网VIP视频解析</h2>
+        <iframe :src="myUrl" style="padding:1vh;height:60vh;border:1px dashed gray;" allowfullscreen='true' ></iframe>
 
         <el-select v-model="value" placeholder="请选择解析引擎" style="display:block;width:60vw;margin:5px auto;" >
             <el-option
@@ -74,11 +74,11 @@
     height:100vh;
 }
  iframe{
-     margin-left:-10vw;
      width:80vw;
  }
  @media screen and (max-width: 800px) {
         iframe {
+            height:40vh;
             margin:0px;
             width:95vw;
         }

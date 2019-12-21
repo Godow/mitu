@@ -50,7 +50,6 @@ import hello from './HelloWorld'
       height:100vh;
     }
     iframe{
-        margin-left:-10vw;
         width:80vw;
         height:99vh;
         border:0px;
