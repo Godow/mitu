@@ -78,7 +78,7 @@
     width:80vw;
  }
  @media screen and (max-width: 800px) {
-        iframe {
+        #vipvideo iframe {
             height:40vh;
             margin:0px;
             width:95vw;

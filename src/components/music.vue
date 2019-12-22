@@ -63,7 +63,7 @@ import hello from './HelloWorld'
         .waiting{
             color:black;
         }
-        iframe {
+        #music iframe {
             margin:0px;
             width:100%;
             height:91vh;

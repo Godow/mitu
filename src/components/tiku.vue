@@ -30,7 +30,7 @@
      height:99vh;
  }
  @media screen and (max-width: 800px) {
-        iframe {
+        #tiku iframe {
             width:100vw;
             margin:0px;
         }

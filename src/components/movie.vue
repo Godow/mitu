@@ -81,7 +81,7 @@
       .waiting{
           color:black;
       }
-        iframe {
+        #movie iframe {
             margin:0px;
             width:100%;
             margin-left:0;
