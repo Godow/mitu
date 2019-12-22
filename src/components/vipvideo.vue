@@ -13,7 +13,7 @@
             </el-option>
         </el-select>
         <el-input style="width:60vw;display:block;margin:5px auto" placeholder="请输入需要解析的视频网址"  v-model="tempUrl"></el-input>
-        <el-button style="width:30vw;" type="primary" round @click="inputUrl = tempUrl">播放</el-button>
+        <el-button style="width:30vw;display:block;margin:5px auto" type="primary" round @click="inputUrl = tempUrl">播放</el-button>
 
     </div>
 </template>
@@ -73,8 +73,9 @@
 #vipvideo{
     height:100vh;
 }
- iframe{
-     width:80vw;
+#vipvideo iframe{
+    margin-left:10vw;
+    width:80vw;
  }
  @media screen and (max-width: 800px) {
         iframe {

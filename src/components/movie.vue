@@ -28,17 +28,7 @@
         var iframe = document.createElement("iframe"); 
         iframe.src = that.iframeSrc;;
         iframe.style.border="0px";
-        iframe.style.allowfullscreen = "true";
-
-        
-
-
-    //     iframe.style.
-    //     iframe div.col-pd.clearfix{
-    //   display:none;
-//   }
-        
-        
+        iframe.style.allowfullscreen = "true";        
         if (iframe.attachEvent){
             iframe.attachEvent("onload", function(){
                 that.waiting = '';
@@ -64,9 +54,10 @@
   #movie{
       height:100vh;
   }
-  iframe{
-       width:80vw;
-       height:99vh;
+  #movie iframe{
+      margin-left:10vw;
+      width:80vw;
+      height:99vh;
   }
   .info{
       width:10vh;

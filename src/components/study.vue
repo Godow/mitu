@@ -20,12 +20,12 @@
 
 
 <style>
- iframe{
-     margin-left:-10vw;
-     width:80vw;
-     border:0px;
-     height:98vh;
- }
+ #study iframe{
+      margin-left:10vw;
+      width:80vw;
+      height:99vh;
+      border
+  }
  @media screen and (max-width: 800px) {
         iframe {
             margin:0px;

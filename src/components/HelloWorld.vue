@@ -102,7 +102,6 @@
     bottom:120px;
     color:red;
   }
-
   .joinus{
     position:fixed;
     right:20px;

@@ -23,7 +23,8 @@
 #tiku{
       height:100vh;
 }
- iframe{
+ #tiku iframe{
+     margin-left:10vw;
      width:80vw;
      border:0px;
      height:99vh;

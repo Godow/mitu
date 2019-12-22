@@ -49,11 +49,11 @@ import hello from './HelloWorld'
     #music{
       height:100vh;
     }
-    iframe{
-        width:80vw;
-        height:99vh;
-        border:0px;
-    }
+    #music iframe{
+      margin-left:10vw;
+      width:80vw;
+      height:99vh;
+  }
     .waiting{
       color:white;
       z-index:-1;
