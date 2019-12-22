@@ -11,11 +11,12 @@ Vue.use(Router)
 
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
       name: 'first',
-      component: vipvideo
+      component: movie
     },
     {
       path: '/youhui',

@@ -20,7 +20,12 @@
 
             <a href='https://www.ilovepdf.com/zh-cn' class="others" target="_blank">PDF编辑</a>
 
-            <a href='https://cn.office-converter.com' class="others" target="_blank">文件格式转换</a>
+            <a href='http://www.alltoall.net' class="others" target="_blank">文件格式转换</a>
+
+            <a href='http://24mail.chacuo.net' class="others" target="_blank">临时邮箱</a>
+
+            <a href='https://www.becmd.com' class="others" target="_blank">短信接码</a>
+            
 
         </div>
     </div>
@@ -43,9 +48,9 @@
      height:100vh;
  }
  .others {
-     background-color:rgba(255,255,255,0.7);
+     background-color:rgba(255,255,255,0.8);
      text-decoration:none;
-     color:#FF7256;
+     color:#515151;
      font-weight:700;
      margin:5px;
      display:flex;
@@ -63,7 +68,7 @@
  }
  @media screen and (max-width: 800px) {
         .others{
-            background-color:rgba(0,255,0,0.2);
+            background-color:rgba(238,210,238,0.2);
         }
         .content{
             padding:0;

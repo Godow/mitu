@@ -2,7 +2,7 @@
   <div id="app">
     <div class="wxtip" id="phoneJweixinTip">
       <span class="wxtip-icon-phone"></span>
-      <p class="wxtip-txt">点击屏幕右上角 [···]<br/>选择 在浏览器打开</p>
+      <p class="wxtip-txt">点击屏幕右上角 [···]<br/>选择 [在浏览器打开]</p>
       <img src="./assets/wechat.jpg" style="width:40vw;height:40vw;margin:3vw;"/>
       <p style="color:white;font-size:8px;">长按二维码添加关注</p>
     </div>
@@ -21,15 +21,28 @@
 </template>
 <script>
 
+  //禁止非法调试
+  var threshold = 160; // 打开控制台的宽或高阈值
+  // 每秒检查一次
+  setInterval(function() {
+      if (window.outerWidth - window.innerWidth > threshold || 
+          window.outerHeight - window.innerHeight > threshold) {
+          // 如果打开控制台，则隐藏网页内容并强制刷新页面
+          console.log("禁止非法调试！");
+          window.location.reload();
+      }
+  }, 1e3);
+
 
 export default {
+  
   name: 'App',
   mounted(){
-    //判断是手机端还是电脑端
+       //判断是手机端还是电脑端
     var userAgentInfo = navigator.userAgent;
     var Agents = ["Android", "iPhone",
-      "SymbianOS", "Windows Phone",
-      "iPad", "iPod"];
+                  "SymbianOS", "Windows Phone",
+                  "iPad", "iPod"];
     var isPC = true;
     for (var v = 0; v < Agents.length; v++) {
       if (userAgentInfo.indexOf(Agents[v]) > 0) {
@@ -41,7 +54,6 @@ export default {
     //判断是不是微信内置浏览器
     var ua = navigator.userAgent;
     var isWeixin = !!/MicroMessenger/i.test(ua);
-    
     
     //如果是微信内置浏览器，就显示遮罩层
     var JweixinTip = document.getElementById('JweixinTip');

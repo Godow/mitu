@@ -1,15 +1,16 @@
 <template>
     <div id="hello" style="">
-
+    
     <div class="phoneNav" style="position:fixed;top:0px;">
     <span style="color:gray;position:fixed;right:10vh;font-size:10px">微信扫码获取<br/>更多资源</span>
     <div style="position:fixed;right:8vh;width:0px;height:0px;border-left:10px solid white;border-top:10px solid transparent;border-bottom:10px solid transparent"></div>
     <img src="../assets/wechat.jpg" style="width:8vh;height:8vh;position:fixed;right:0px;"></img>
-      <el-dropdown trigger="click">
+      <el-dropdown trigger="click" style="position:fixed;left:0px;">
         <span class="el-dropdown-link" style="line-height:8vh;color:white;font-size:20px;">
           菜单<i class="el-icon-arrow-down el-icon--right"></i>
+         
         </span>
-        <el-dropdown-menu slot="dropdown" style="position:fixed;left:0px;line-height:50px;color:white">
+        <el-dropdown-menu slot="dropdown" style="line-height:50px;color:white;">
          <el-dropdown-item>
             <router-link to='movie'>电影频道</router-link>
           </el-dropdown-item>
@@ -39,9 +40,6 @@
       </div>
 
 
-
-
-
         <div class="nav">
 
           <router-link to='movie'><el-button type="primary" round>电影频道</el-button></router-link>
@@ -61,7 +59,9 @@
         <img class="joinus" src="../assets/wechat.jpg"></img>
 
         <img class="mitu" src="../assets/mitu.png"/>
+        
     </div>
+    
 </template>
 
 <script>
@@ -73,13 +73,6 @@
       };
     },
     methods: {
-      handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
-      }
     }
    
   }

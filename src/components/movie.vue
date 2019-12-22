@@ -5,10 +5,8 @@
         <!-- <iframe class="iframeItem" frameborder=0 src="https://009bk.com/" allowfullscreen='true' > </iframe>-->
         <!--https://www.qsptv.net-->
         
-
         <img class="info" src="../assets/wechat.jpg">
 
-        
     </div>
 </template>
 
@@ -19,7 +17,7 @@
     data(){
         return {
             waiting:'正在加载资源，请稍后... ...',
-            iframeSrc:"https://www.tv432.com"//"https://009bk.com/",//https://www.qsptv.net
+            iframeSrc:"https://www.tv432.com",//"https://009bk.com/",//https://www.qsptv.net,
         }
     },
     components:{
@@ -31,6 +29,14 @@
         iframe.src = that.iframeSrc;;
         iframe.style.border="0px";
         iframe.style.allowfullscreen = "true";
+
+        
+
+
+    //     iframe.style.
+    //     iframe div.col-pd.clearfix{
+    //   display:none;
+//   }
         
         
         if (iframe.attachEvent){
@@ -54,6 +60,7 @@
       padding:0px;
       margin:0px;
   }
+  
   #movie{
       height:100vh;
   }
