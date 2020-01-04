@@ -86,7 +86,7 @@
   }
 
   #hello{
-    position:absolute;
+    position:fixed;
   }
   #hello a .el-button{
     float:left;

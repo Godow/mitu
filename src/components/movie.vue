@@ -77,8 +77,9 @@
     /*大屏*/
     @media screen and (min-width: 800px) {
         .beiyong{
-            float:right;
-            padding-top:15vh;
+            position:fixed;
+            right:-10px;
+            top:15vh;
 
         }
         .beiyong a{
