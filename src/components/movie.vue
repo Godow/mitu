@@ -65,7 +65,7 @@
   #movie iframe{
       margin-left:10vw;
       width:80vw;
-      height:100%;
+      height:99%;
   }
 
   .waiting{

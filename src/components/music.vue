@@ -52,7 +52,7 @@ import hello from './HelloWorld'
     #music iframe{
       margin-left:10vw;
       width:80vw;
-      height:100%;
+      height:99vh;
   }
     .waiting{
       color:white;
