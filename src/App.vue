@@ -21,17 +21,7 @@
 </template>
 <script>
 
-  //禁止非法调试
-  var threshold = 160; // 打开控制台的宽或高阈值
-  // 每秒检查一次
-  setInterval(function() {
-      if (window.outerWidth - window.innerWidth > threshold || 
-          window.outerHeight - window.innerHeight > threshold) {
-          // 如果打开控制台，则隐藏网页内容并强制刷新页面
-          console.log("禁止非法调试！");
-          window.location.reload();
-      }
-  }, 1e3);
+  
 
 
 export default {
@@ -50,7 +40,20 @@ export default {
          break;
       }
     }
-
+	//如果是电脑端，设置非法调试
+	// if(isPC){
+	// 	//禁止非法调试
+	// 	var threshold = 160; // 打开控制台的宽或高阈值
+	// 	// 每秒检查一次
+	// 	setInterval(function() {
+	// 	  if (window.outerWidth - window.innerWidth > threshold || 
+	// 		  window.outerHeight - window.innerHeight > threshold) {
+	// 		  // 如果打开控制台，则隐藏网页内容并强制刷新页面
+	// 		  console.log("禁止非法调试！");
+	// 		  window.location.reload();
+	// 	  }
+	// 	}, 1e3);
+	// }
     //判断是不是微信内置浏览器
     var ua = navigator.userAgent;
     var isWeixin = !!/MicroMessenger/i.test(ua);
@@ -131,10 +134,9 @@ export default {
 }
 @media screen and (min-width: 800px) {
     #app{
-        
         background-image:url('./assets/background.jpg');
         background-attachment:fixed;
-        background-repeat:no-repeat;
+        background-repeat:round;
         background-position:top left;
     }
   }

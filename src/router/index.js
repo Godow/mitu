@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/',
       name: 'first',
-      component: vipvideo
+      component: movie
     },
     {
       path: '/youhui',

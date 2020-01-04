@@ -20,15 +20,15 @@
           </el-dropdown-item>
 
           <el-dropdown-item>
-            <a href="http://rrd.me/ftesh">优惠购物</a>
-          </el-dropdown-item>
-
-          <el-dropdown-item>
             <router-link to='music'>音乐下载</router-link>
           </el-dropdown-item>
           
           <el-dropdown-item>
             <router-link to='tiku'>题库中心</router-link>
+          </el-dropdown-item>
+
+          <el-dropdown-item>
+            <a href="http://rrd.me/ftesh">优惠购物</a>
           </el-dropdown-item>
 
           <el-dropdown-item>
@@ -46,11 +46,11 @@
 
           <router-link to='vip'><el-button type="primary" round>视频解析</el-button></router-link>
 
-          <a href='http://rrd.me/ftesh'><el-button type="primary" round>优惠购物</el-button></a>
-
           <router-link to='music'><el-button type="primary" round>音乐下载</el-button></router-link>
 
           <router-link to='tiku'><el-button type="primary" round>题库中心</el-button></router-link>
+          
+          <a href='http://rrd.me/ftesh'><el-button type="primary" round>优惠购物</el-button></a>
 
           <router-link to='others'><el-button type="primary" round>更多资源</el-button></router-link>
         </div>
@@ -101,6 +101,7 @@
     right:0px;
     bottom:120px;
     color:red;
+	text-align: center; 
   }
   .joinus{
     position:fixed;

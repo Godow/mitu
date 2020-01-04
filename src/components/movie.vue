@@ -1,11 +1,19 @@
 <template>
     <div id="movie">
         <hello></hello>
+		<div class="beiyong">
+			<a href="https://www.77kpp.com/"><el-button round size="mini">备用线路1</el-button></a>
+			<a href="http://www.kk2w.cc/" ><el-button round size="mini">备用线路2</el-button></a>
+			<a href="https://www.i6v.cc/" ><el-button round size="mini">备用线路3</el-button></a>
+			<a href="https://www.yunbtv.com/" ><el-button round size="mini">备用线路4</el-button></a>
+			<a href="https://009bk.com/" ><el-button round size="mini">备用线路5</el-button></a>
+			<a href="https://www.qsptv.net" ><el-button round size="mini">备用线路6</el-button></a>
+		</div>
+		
         <div v-html="waiting" class="waiting"></div>
         <!-- <iframe class="iframeItem" frameborder=0 src="https://009bk.com/" allowfullscreen='true' > </iframe>-->
         <!--https://www.qsptv.net-->
         
-        <img class="info" src="../assets/wechat.jpg">
 
     </div>
 </template>
@@ -57,16 +65,7 @@
   #movie iframe{
       margin-left:10vw;
       width:80vw;
-      height:99vh;
-  }
-  .info{
-      width:10vh;
-      height:10vh;
-      background-color:white;
-      position:fixed;
-      right:11.3vw;
-      bottom:46vh;
-      opacity:0;
+      height:100%;
   }
 
   .waiting{
@@ -74,17 +73,34 @@
       z-index:-1;
       position:absolute;
   }
-  .info:hover{
-      opacity:1;
-  }
-  @media screen and (max-width: 800px) {
-      .waiting{
-          color:black;
-      }
-        #movie iframe {
-            margin:0px;
-            width:100%;
-            margin-left:0;
+
+    /*大屏*/
+    @media screen and (min-width: 800px) {
+        .beiyong{
+            float:right;
+            padding-top:15vh;
+
         }
+        .beiyong a{
+            float:right;
+            clear:both;
+            line-height:50px;
+        }
+    }
+    /*小屏*/
+  @media screen and (max-width: 800px) {
+		.beiyong{
+            background-color:rgba(139,126,102,0.5);
+			display:grid;
+			grid-template-columns:repeat(4,25%);
+		}
+		.waiting{
+		  color:black;
+		}
+		#movie iframe {
+			margin:0px;
+			width:100%;
+			margin-left:0;
+		}
     }
 </style>
