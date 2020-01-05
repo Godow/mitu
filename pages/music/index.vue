@@ -1,12 +1,10 @@
 <template>
     <div id="music">
-        <hello></hello>
         <div v-html="waiting" class="waiting"></div>
     </div>
 </template>
 
 <script>
-import hello from '@/pages/index.vue'
   export default {
     name:'music',
     data(){
@@ -16,7 +14,6 @@ import hello from '@/pages/index.vue'
         }
     },
     components:{
-        hello
     },
     mounted:function(){
         let that=this;

@@ -1,6 +1,5 @@
 <template>
     <div id="movie">
-        <hello></hello>
 		<div class="beiyong">
 			<a href="https://www.77kpp.com/"><el-button round size="mini">备用线路1</el-button></a>
 			<a href="http://www.kk2w.cc/" ><el-button round size="mini">备用线路2</el-button></a>
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-  import hello from '@/pages/index.vue'
   export default {
     name:'movie',
     data(){
@@ -29,7 +27,6 @@
         }
     },
     components:{
-        hello
     },
     mounted:function(){
         let that=this;
@@ -47,7 +44,6 @@
             };
         }
         document.getElementById("movie").append(iframe);
-
     }
   }
 </script>

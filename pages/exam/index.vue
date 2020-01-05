@@ -1,18 +1,14 @@
 <template>
     <div id="tiku">
-        <hello></hello>
-
         <iframe src="https://www.examcoo.com/index/ku"  allowfullscreen='true' ></iframe>
 
     </div>
 </template>
 
 <script>
-  import hello from '@/pages/index.vue'
   export default {
     name:'tiku',
     components:{
-        hello
     },
 
   }

@@ -15,18 +15,24 @@
 
 
     <div id="routerView">
+      <hello></hello>
+      <nuxt name="movie"></nuxt>
       <nuxt/>
     </div>
+    
   </div>
 </template>
 <script>
 
   
 
-
+import hello from '@/pages/index.vue'
 export default {
   
   name: 'App',
+  components:{
+        hello
+  },
   mounted(){
        //判断是手机端还是电脑端
     var userAgentInfo = navigator.userAgent;
@@ -41,24 +47,25 @@ export default {
       }
     }
 	//如果是电脑端，设置非法调试
-    if(isPC){
-      //禁止非法调试
-      var threshold = 160; // 打开控制台的宽或高阈值
-      // 每秒检查一次
-      setInterval(function() {
-        if (window.outerWidth - window.innerWidth > threshold || 
-          window.outerHeight - window.innerHeight > threshold) {
-          // 如果打开控制台，则隐藏网页内容并强制刷新页面
-          console.clear();
-          document.getElementById('app').style.display="none";
-          console.log("禁止非法调试！");
-          debugger;
-          window.location.reload();
-        }else{
-          document.getElementById('app').style.display="block";
-        }
-      }, 1e3);
-    }
+    // if(isPC){
+    //   //禁止非法调试
+    //   var threshold = 160; // 打开控制台的宽或高阈值
+    //   // 每秒检查一次
+    //   setInterval(function() {
+    //     if (window.outerWidth - window.innerWidth > threshold || 
+    //       window.outerHeight - window.innerHeight > threshold) {
+    //       // 如果打开控制台，则隐藏网页内容并强制刷新页面
+    //       console.clear();
+    //       document.getElementById('app').style.display="none";
+    //       console.log("禁止非法调试！");
+    //       debugger;
+    //       window.location.reload();
+    //     }else{
+    //       document.getElementById('app').style.display="block";
+    //     }
+    //   }, 1e3);
+    // }
+
     //判断是不是微信内置浏览器
     var ua = navigator.userAgent;
     var isWeixin = !!/MicroMessenger/i.test(ua);
@@ -67,11 +74,11 @@ export default {
     var JweixinTip = document.getElementById('JweixinTip');
     //是微信内置浏览器 
     if(isWeixin){   
-      //如果是手机端
+      //如果是微信手机端
       if(!isPC){  
         phoneJweixinTip.style.display='block';
       }
-      //如果是PC端
+      //如果是微信PC端
       else{
         pcJweixinTip.style.display='block';
       }
@@ -81,12 +88,17 @@ export default {
     }else{
       pcJweixinTip.style.display='none';
       phoneJweixinTip.style.display='none';
+      //如果不是微信端就显示内容
+      document.getElementById('routerView').style.display="block";
     }
   },
 }
 </script>
 
 <style>
+#routerView{
+  display:none;
+}
 .wxtip{
   background: rgba(0,0,0,0.8); 
   text-align: center; 

@@ -1,6 +1,5 @@
 <template>
     <div id="vipvideo">
-        <hello></hello>
         <h2 style="color:#FF7256;text-align:center;padding:1vh">全网VIP视频解析</h2>
         <iframe :src="myUrl" style="padding:1vh;height:60vh;border:1px dashed gray;" allowfullscreen='true' ></iframe>
 
@@ -19,11 +18,9 @@
 </template>
 
 <script>
-  import hello from '@/pages/index.vue'
   export default {
     name:'vipvideo',
     components:{
-        hello
     },
     data(){
         return {

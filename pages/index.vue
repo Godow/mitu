@@ -1,5 +1,5 @@
 <template>
-    <div id="hello" style="">
+    <div id="hello">
     
     <div class="phoneNav" style="position:fixed;top:0px;">
     <span style="color:gray;position:fixed;right:10vh;font-size:10px">微信扫码获取<br/>更多资源</span>
@@ -8,69 +8,55 @@
       <el-dropdown trigger="click" style="position:fixed;left:0px;">
         <span class="el-dropdown-link" style="line-height:8vh;color:white;font-size:20px;">
           菜单<i class="el-icon-arrow-down el-icon--right"></i>
-         
         </span>
+
         <el-dropdown-menu slot="dropdown" style="line-height:50px;color:white;">
-         <el-dropdown-item>
-            <nuxt-link to='movie'>电影频道</nuxt-link>
-          </el-dropdown-item>
 
-          <el-dropdown-item>
-            <nuxt-link to='vip'>视频解析</nuxt-link>
-          </el-dropdown-item>
-
-          <el-dropdown-item>
-            <nuxt-link to='music'>音乐下载</nuxt-link>
-          </el-dropdown-item>
-          
-          <el-dropdown-item>
-            <nuxt-link to='tiku'>题库中心</nuxt-link>
-          </el-dropdown-item>
+         <template v-for="item of menuList">
+            <el-dropdown-item>
+              <nuxt-link :to="item.menuLink">{{item.menuName}}</nuxt-link>
+            </el-dropdown-item>
+         </template>
 
           <el-dropdown-item>
             <a href="http://rrd.me/ftesh">优惠购物</a>
           </el-dropdown-item>
 
-          <el-dropdown-item>
-            <nuxt-link to='others'>更多资源</nuxt-link>
-          </el-dropdown-item>
-
         </el-dropdown-menu>
       </el-dropdown>     
-      </div>
+    </div>
 
 
         <div class="nav">
+          <template v-for="item of menuList">
+            <nuxt-link :to=item.menuLink><el-button type="primary" round>{{item.menuName}}</el-button></nuxt-link>
+          </template>
 
-          <nuxt-link to='movie'><el-button type="primary" round>电影频道</el-button></nuxt-link>
-
-          <nuxt-link to='vip'><el-button type="primary" round>视频解析</el-button></nuxt-link>
-
-          <nuxt-link to='music'><el-button type="primary" round>音乐下载</el-button></nuxt-link>
-
-          <nuxt-link to='tiku'><el-button type="primary" round>题库中心</el-button></nuxt-link>
-          
           <a href='http://rrd.me/ftesh'><el-button type="primary" round>优惠购物</el-button></a>
 
-          <nuxt-link to='others'><el-button type="primary" round>更多资源</el-button></nuxt-link>
         </div>
-
         <p class="tuijian">强烈推荐关注公众号<br/>获取更多资源</p>
-        <img class="joinus" src="../assets/wechat.jpg"></img>
-
-        <img class="mitu" src="../assets/mitu.png"/>
+        <img class="joinus" src="../assets/wechat.jpg"></img>        
         
-        <nuxt />
+        <router-view name="movie"></router-view>
     </div>
     
 </template>
 
 <script>
+  
   export default {
+    middleware: 'homeRedirect',
     name:'hello',
     data() {
       return {
-        dialogVisible: false
+        menuList:[
+            {menuName:'电影频道',menuLink:'/movie'},
+            {menuName:'视频解析',menuLink:'/vip'},
+            {menuName:'音乐下载',menuLink:'/music'},
+            {menuName:'题库中心',menuLink:'/exam'},
+            {menuName:'更多资源',menuLink:'/more'},
+        ]
       };
     },
     methods: {
@@ -112,15 +98,6 @@
     height:100p;
 
   }
-  .mitu{
-    position:fixed;
-    border-radius:0 0 0 120px;
-    right:-20px;
-    top:-20px;
-    width:120px;
-    height:120p;
-    background-color:white;
-  }
   a{
     text-decoration:none;
   }
@@ -130,9 +107,6 @@
   }
 
   @media screen and (max-width: 800px) {
-    .mitu{
-      display:none;
-    }
     #hello{
       position:relative;
       height:0px;
