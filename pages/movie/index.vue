@@ -1,17 +1,12 @@
 <template>
     <div id="movie">
 		<div class="beiyong">
-			<a href="https://www.77kpp.com/"><el-button round size="mini">备用线路1</el-button></a>
-			<a href="http://www.kk2w.cc/" ><el-button round size="mini">备用线路2</el-button></a>
-			<a href="https://www.i6v.cc/" ><el-button round size="mini">备用线路3</el-button></a>
-			<a href="https://www.yunbtv.com/" ><el-button round size="mini">备用线路4</el-button></a>
-			<a href="https://009bk.com/" ><el-button round size="mini">备用线路5</el-button></a>
-			<a href="https://www.qsptv.net" ><el-button round size="mini">备用线路6</el-button></a>
+            <template v-for="item of movieList">
+                <a><el-button round class="btn" size="mini" @click="iframeSrc = item.link">{{item.name}}</el-button></a>
+            </template>
 		</div>
 		
         <div v-html="waiting" class="waiting"></div>
-        <!-- <iframe class="iframeItem" frameborder=0 src="https://009bk.com/" allowfullscreen='true' > </iframe>-->
-        <!--https://www.qsptv.net-->
         
 
     </div>
@@ -23,27 +18,45 @@
     data(){
         return {
             waiting:'正在加载资源，请稍后... ...',
-            iframeSrc:"https://www.tv432.com",//"https://009bk.com/",//https://www.qsptv.net,
+            iframeSrc:"",
+            movieList:[
+                {name:'线路1',link:'https://www.tv432.com'},
+                {name:'线路2',link:'https://www.yunbtv.com'},
+                {name:'线路3',link:'https://www.qsptv.net'},
+                {name:'线路4',link:'https://www.i6v.cc'},
+                {name:'线路5',link:'https://www.77kpp.com'},
+                {name:'线路6',link:'https://009bk.com'},
+                // {name:'线路7',link:'http://www.kk2w.cc'},
+            ]
         }
     },
     components:{
     },
     mounted:function(){
-        let that=this;
-        var iframe = document.createElement("iframe"); 
-        iframe.src = that.iframeSrc;;
-        iframe.style.border="0px";
-        iframe.style.allowfullscreen = "true";        
-        if (iframe.attachEvent){
-            iframe.attachEvent("onload", function(){
-                that.waiting = '';
-            });
-        } else {
-            iframe.onload = function(){
-                that.waiting = '';
-            };
+        this.iframeSrc = this.movieList[0].link;
+    },
+    watch:{
+        iframeSrc(){
+            let oldIframe = document.getElementsByTagName('iframe');
+            if(oldIframe.length > 0)
+                oldIframe[0].remove();
+            this.waiting='正在加载资源，请稍后... ...';
+            let that=this;
+            var iframe = document.createElement("iframe"); 
+            iframe.src = that.iframeSrc;;
+            iframe.style.border="0px";
+            iframe.style.allowfullscreen = "true";        
+            if (iframe.attachEvent){
+                iframe.attachEvent("onload", function(){
+                    that.waiting = '';
+                });
+            } else {
+                iframe.onload = function(){
+                    that.waiting = '';
+                };
+            }
+            document.getElementById("movie").append(iframe);
         }
-        document.getElementById("movie").append(iframe);
     }
   }
 </script>

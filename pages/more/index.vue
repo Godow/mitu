@@ -3,7 +3,7 @@
         <div class="content">
 
             <template v-for="item of linkList">
-                <a href='item.link' class="more" target="_blank">{{item.name}}</a>
+                <a :href="item.link" class="more" target="_blank">{{item.name}}</a>
             </template>
 
         </div>
