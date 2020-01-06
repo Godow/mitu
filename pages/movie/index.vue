@@ -45,7 +45,7 @@
             var iframe = document.createElement("iframe"); 
             iframe.src = that.iframeSrc;;
             iframe.style.border="0px";
-            iframe.style.allowfullscreen = "true";        
+            iframe.setAttribute('allowFullScreen','');
             if (iframe.attachEvent){
                 iframe.attachEvent("onload", function(){
                     that.waiting = '';
