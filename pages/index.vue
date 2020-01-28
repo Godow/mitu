@@ -1,8 +1,12 @@
 <template>
     <div id="hello">
-    
+
+    <div class="drag">
+        <div class="drag_box" v-drag></div>
+    </div>
+
     <div class="phoneNav" style="position:fixed;top:0px;">
-    <span style="color:gray;position:fixed;right:10vh;font-size:10px">微信扫码获取<br/>更多资源</span>
+    <span style="color:gray;position:fixed;right:10vh;font-size:10px">微信扫码<br/>关注公众号</span>
     <div style="position:fixed;right:8vh;width:0px;height:0px;border-left:10px solid white;border-top:10px solid transparent;border-bottom:10px solid transparent"></div>
     <img src="../assets/wechat.jpg" style="width:8vh;height:8vh;position:fixed;right:0px;"></img>
       <el-dropdown trigger="click" style="position:fixed;left:0px;">
@@ -35,7 +39,7 @@
           <a href='http://rrd.me/ftesh'><el-button type="primary" round>优惠购物</el-button></a>
 
         </div>
-        <p class="tuijian">强烈推荐关注公众号<br/>获取更多资源</p>
+        <p class="tuijian">强烈推荐关注公众号<br/>关注公众号</p>
         <img class="joinus" src="../assets/wechat.jpg"></img>        
         
         <router-view name="movie"></router-view>
@@ -60,8 +64,7 @@
       };
     },
     methods: {
-    }
-   
+    },   
   }
 </script>
 
@@ -71,6 +74,8 @@
       padding:0px;
       margin:0px;
   }
+
+
 
   #hello{
     position:fixed;
