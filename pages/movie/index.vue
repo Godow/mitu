@@ -1,15 +1,23 @@
 <template>
     <div id="movie">
 
-        <el-button plain type="text" @click="drawer = true" style="color:#eee;margin-left: 16px;position:fixed;top:0px;opacity:0.5;line-height:3vh;margin-left:35vw">
-        <i class="el-icon-thumb"></i>切换备用线路
-        </el-button>
+        <a class="beiyong_phone" href="javascript:void(0);" @click="drawer = true" style="color:#eee;position:fixed;top:2.5vh;opacity:0.5;line-height:3vh;right:0px">
+            <i class="el-icon-thumb"></i>切换备用线路
+        </a>
+
+
+        <div class="beiyong_pc">
+            <template v-for="item of movieList">
+                <a><el-button round class="btn" size="mini" @click="iframeSrc = item.link">{{item.name}}</el-button></a>
+            </template>
+		</div>
 
         <el-drawer
         title="备用影视线路"
         :visible.sync="drawer"
+        :show-close="false"
         direction="rtl"
-        size="60%"
+        size="45%"
         :before-close="handleClose">
             <div class="beiyong">
             <template v-for="item of movieList">
@@ -107,13 +115,19 @@
 
     /*大屏*/
     @media screen and (min-width: 800px) {
-        .beiyong{
+        .beiyong_phone{
+            display:none;
+        }
+        .beiyong_pc{
+            display:block;
+        }
+        .beiyong_pc{
             position:fixed;
             right:-10px;
             top:15vh;
 
         }
-        .beiyong a{
+        .beiyong_pc a{
             float:right;
             clear:both;
             line-height:50px;
@@ -121,13 +135,16 @@
     }
     /*小屏*/
   @media screen and (max-width: 800px) {
+        .beiyong_pc{
+            display:none;
+        }
 		.beiyong{
 			display:block;
 		}
         .btn{
             display:block;
             margin:3vh;
-            width:50vw;
+            width:35vw;
         }
 		.waiting{
 		  color:black;
