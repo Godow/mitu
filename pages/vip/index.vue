@@ -74,6 +74,9 @@
     margin-left:10vw;
     width:80vw;
  }
+ #clock{
+     display:none;
+ }
  @media screen and (max-width: 800px) {
         #vipvideo iframe {
             height:40vh;

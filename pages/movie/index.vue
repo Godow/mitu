@@ -48,7 +48,7 @@
                 {name:'线路2',link:'https://www.77kpp.com'},
                 {name:'线路3',link:'https://www.qsptv.net'},
                 {name:'线路4',link:'https://www.i6v.cc'},
-                {name:'线路5',link:'https://www.yunbtv.comhttps://www.77kpp.com'},
+                {name:'线路5',link:'https://www.yunbtv.com'},
                 {name:'线路6',link:'https://009bk.com'},
                 // {name:'线路7',link:'http://www.kk2w.cc'},
             ]
@@ -73,7 +73,7 @@
             this.waiting='正在加载资源，请稍后... ...';
             let that=this;
             var iframe = document.createElement("iframe"); 
-            iframe.src = that.iframeSrc;;
+            iframe.src = that.iframeSrc;
             iframe.style.border="0px";
             iframe.setAttribute('allowFullScreen','');
             if (iframe.attachEvent){

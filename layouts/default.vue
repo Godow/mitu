@@ -48,22 +48,35 @@ export default {
     }
 	//如果是电脑端，设置非法调试
     if(isPC){
-      //禁止非法调试
-      var threshold = 160; // 打开控制台的宽或高阈值
-      // 每秒检查一次
-      setInterval(function() {
-        if (window.outerWidth - window.innerWidth > threshold || 
-          window.outerHeight - window.innerHeight > threshold) {
-          // 如果打开控制台，则隐藏网页内容并强制刷新页面
-          console.clear();
-          document.getElementById('app').style.display="none";
-          console.log("禁止非法调试！");
-          debugger;
-          // window.location.reload();
-        }else{
-          document.getElementById('app').style.display="block";
-        }
-      }, 1e3);
+      // //禁止非法调试
+      // var threshold = 160; // 打开控制台的宽或高阈值
+      // // 每秒检查一次
+      // setInterval(function() {
+      //   if (window.outerWidth - window.innerWidth > threshold || 
+      //     window.outerHeight - window.innerHeight > threshold) {
+      //     // 如果打开控制台，则隐藏网页内容并强制刷新页面
+      //     console.clear();
+      //     document.getElementById('app').style.display="none";
+      //     console.log("禁止非法调试！");
+      //     debugger;
+      //     // window.location.reload();
+      //   }else{
+      //     document.getElementById('app').style.display="block";
+      //   }
+      // }, 1e3);
+    }else{
+
+      var customUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36";
+ 
+      //修改后的userAgent            
+            Object.defineProperty(navigator, 'userAgent', {
+              value: customUserAgent,
+              writable: false
+            });
+  
+      //打印
+
+      //navigator.userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36";
     }
 
     //判断是不是微信内置浏览器
