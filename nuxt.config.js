@@ -1,6 +1,9 @@
 
 export default {
   mode: 'universal',
+  router:{
+    base: process.env.NODE_ENV === 'production' ? '/mitu/' : '/',
+  },
   /*
   ** Headers of the page
   */

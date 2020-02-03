@@ -25,7 +25,7 @@
             </el-dropdown-item>
 
             <span style="color:gray;position:absolute;bottom:10vh;left:0vw;font-size:10px;text-align:center">微信扫码<br/>关注公众号</span>
-            <img src="../../assets/wechat.jpg" style="width:10vh;height:10vh;position:absolute;left:0px;bottom:0px;"></img>
+            <img src="../assets/wechat.jpg" style="width:10vh;height:10vh;position:absolute;left:0px;bottom:0px;"></img>
 
             <a href="https://github.com/Godow/mitu/releases/download/1.0/mitu.apk" download="米兔资源.apk" style="position:absolute;bottom:3px;right:3px;color:#222;font-size:13px;font-weight:bold">
               <i class="el-icon-download"></i>Android下载
@@ -43,7 +43,7 @@
 
       
         <p class="tuijian">强烈推荐<br/>关注公众号</p>
-        <img class="joinus" src="../../assets/wechat.jpg"></img>        
+        <img class="joinus" src="../assets/wechat.jpg"></img>        
         
         <router-view name="movie"></router-view>
     </div>
