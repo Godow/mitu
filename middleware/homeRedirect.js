@@ -1,4 +1,4 @@
   
 export default function ({ store, redirect }) {
-  return redirect('/movie')
+  return redirect('../movie')
 }

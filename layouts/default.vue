@@ -26,7 +26,7 @@
 
   
 
-import hello from '@/pages/index.vue'
+import hello from '@/pages/mitu/index.vue'
 export default {
   
   name: 'App',
